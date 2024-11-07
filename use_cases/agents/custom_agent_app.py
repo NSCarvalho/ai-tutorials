@@ -32,7 +32,12 @@ agent= initialize_agent(
 # a language model.
 
 # Call the agent
-try:
-    result = agent("whats the date today?") 
-except: 
-    print("exception on external access")
+while True:
+    try:
+        query = input("Enter your query: ")
+        if query == "exit":
+            break
+        result = agent(query) 
+        print(result)
+    except: 
+        print("exception on external access")
